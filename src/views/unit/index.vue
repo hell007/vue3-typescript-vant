@@ -66,10 +66,6 @@ export default defineComponent({
         url: '/unitList'
       },
       {
-        name: '地址选择',
-        url: '/unitAddress'
-      },
-      {
         name: '开发',
         url: '/workService'
       }

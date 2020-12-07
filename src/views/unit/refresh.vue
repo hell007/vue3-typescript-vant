@@ -38,7 +38,7 @@ import { Unit, UnitModel } from '@/entities/unit';
 import { theme } from '@/theme';
 
 export default defineComponent({
-  name: 'unit-list',
+  name: 'unit-refresh',
   components: {},
   setup() {
     const primary = theme.primary;
