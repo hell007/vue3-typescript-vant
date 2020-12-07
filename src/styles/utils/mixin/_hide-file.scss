@@ -1,0 +1,8 @@
+@mixin hide-file() {
+  position: absolute;
+  right: 0;
+  bottom: 0; // bottom is better than top
+  font-size: 999px;
+  opacity: 0;
+  cursor: pointer;
+}

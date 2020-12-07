@@ -1,0 +1,134 @@
+.step {
+  $step-size: 26px;
+
+  &-item {
+    @include flex-row();
+
+    &-time {
+      position: relative;
+      min-width: 60px;
+      border-right: 1px solid $color-c8;
+      font-size: 12px;
+      color: $color-96;
+      
+      b {
+        font-weight: normal;
+      }
+    }
+
+    &-number {
+      position: absolute;
+      right: -$step-size/2;
+      top: 0px;
+      z-index: 2;
+      width: $step-size;
+      height: $step-size;
+      border-radius: 999px;
+      text-align: center;
+      line-height: $step-size;
+      border: 2px solid $color-c8;
+      background-color: $color-white;
+      font-size: 14px;
+      color: $color-c8;
+    }
+
+    &-title {
+      flex: 3.5;
+      padding-left: 20px;
+      padding-bottom: 10px;
+      color: $color-96;
+
+      &-hd {
+        @include flex-row();
+        align-items:center;
+        margin-bottom:5px;
+
+        b {
+          font-size: 14px;
+          font-weight: normal;
+          flex:4;
+        }
+
+        em {
+          font-style:normal;
+          font-size:12px;
+          color:$color-primary;
+
+          &::after {
+            display:inline-block;
+            content:'';
+            margin-left:2px;
+            @include arrow(right,1em,1px);
+          }
+        }
+      }
+
+      p {
+        font-size: 12px;
+        margin-bottom:0;
+      }
+    }
+
+    &:last-child {
+      
+      .step-item-time {
+        border-right:0;
+      }
+    }
+
+    &.on {
+
+      .step-item-time {
+        color: $color-32;
+        border-right-color: $color-primary;
+        
+        b {
+          font-size: 14px;
+        }
+      }
+
+      .step-item-number {
+        border-color: $color-primary;
+        background-color: $color-primary;
+        color: $color-white;
+      }
+
+      .step-item-title {
+        color: $color-32;
+      }
+    }
+
+    &.line {
+      overflow:hidden;
+
+      .step-item-time {
+        border-right: 0;
+
+        &::before {
+          position:absolute;
+          left:50%;
+          top:40px;
+          margin-left:-10px;
+          display:inline-block;
+          content:'';
+          width:1px;
+          height:50%;
+          background-color:$color-c8;
+        }
+      }
+
+      .step-item-title {
+        padding-left:0;
+      }
+
+      &:last-child {
+
+        .step-item-time {
+          &::before {
+           width:0;
+          }
+        }
+      }
+    }
+  }
+}

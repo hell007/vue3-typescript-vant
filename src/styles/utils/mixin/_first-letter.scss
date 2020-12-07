@@ -1,0 +1,10 @@
+// first-letter(60px,red)
+@mixin first-letter($font-size: 30px, $color: #FF3366) {
+
+  &:first-letter{
+    display: block;
+    margin: 5px 0 0 5px;
+    color: $color;
+    font-size: $font-size;
+  }
+}

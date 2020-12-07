@@ -1,0 +1,35 @@
+@import 'global';
+
+// normalize && reboot
+@import './base/normalize';
+@import 'base/reboot';
+
+input,
+textarea {
+  @include pseudo(read-only) {
+    background: none;
+  }
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+// components
+@import 'component/vant';
+@import 'component/page';
+@import 'component/steps';
+
+// common
+@import 'common/icon';
+@import 'common/header';
+@import 'common/footer';
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}

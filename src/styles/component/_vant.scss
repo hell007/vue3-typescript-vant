@@ -1,0 +1,91 @@
+// vant reset
+
+.page {
+  // search
+  .van-search {
+    &__action,
+    &__action:active {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+  }
+
+  // tab
+  .van-tab {
+    font-size: $font-14;
+    color: $color-32;
+  }
+
+  // dropdown
+  .van-dropdown-menu {
+    height: 45px;
+
+    &__title {
+      font-size: $font-14;
+      $color: $color-32;
+    }
+  }
+
+  //pull-refresh
+  .van-pull-refresh {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  // list
+  .van-list {
+    &__finished-text,
+    &__loading,
+    &__error-text {
+      font-size: $font-12;
+      color: $color-7d;
+    }
+  }
+
+  // picker
+  .van-picker__toolbar {
+    background-color: $color-f7;
+  }
+
+  .van-picker__cancel,
+  .van-picker__confirm {
+    color: $color-primary;
+  }
+
+  .van-picker__title {
+    font-size: 14px;
+    color: $color-32;
+  }
+
+  // multi
+  .multi {
+    &-title {
+      padding: 0 10px;
+      height: 44px;
+      line-height: 44px;
+      font-size: $font-14;
+      font-weight: bold;
+      color: $color-32;
+      background-color: $color-f7;
+    }
+  }
+
+  //remove ther logo of baidu-map
+  /deep/.BMap_cpyCtrl {
+    display: none !important;
+  }
+  /deep/.anchorBL {
+    display: none !important;
+  }
+}
+
+//dialog
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: $color-primary;
+}
+
+//overlay
+body .van-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+}

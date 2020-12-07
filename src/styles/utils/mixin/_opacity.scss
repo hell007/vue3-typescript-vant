@@ -1,0 +1,11 @@
+// opacity(0.5)
+@mixin opacity($opacity: 1) {
+	
+	@if $legacy-ie <= 8 {
+    filter: alpha(opacity=$opacity * 100); /* internet explorer */
+  }
+  
+  -khtml-opacity: $opacity;      /* khtml, old safari */
+  -moz-opacity: $opacity;       /* mozilla, netscape */
+  opacity: $opacity;           /* fx, safari, opera */
+}

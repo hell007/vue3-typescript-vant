@@ -1,0 +1,123 @@
+$device: mobile;
+$legacy-ie: 9;
+$use-rem: false;
+$design-width: 720;
+$env-brand-color: null;
+
+// variables
+$box-sizing: border-box; // set to null to disable box-sizing
+
+$base-font-size: 87.5%; // 14px;
+$base-color: #323233;
+$base-background-color: #f7f8fa;
+
+$link-color: inherit;
+$link-decoration: none;
+$link-hover-color: inherit;
+$link-hover-decoration: none;
+$focus-outline: false; //outline on focus
+
+// only if not $mobile-only
+// and only padding if $use-border-box
+$container-min-width: 1000;
+$container-max-width: 1200;
+$container-padding: 15px;
+
+$reboot-mods: (
+  '::selection': true,
+  ul: true,
+  ol: true,
+  dl: true,
+  // also dt dd
+    p: true,
+  table: true,
+  // also caption
+    label: true,
+  hr: true,
+  // output: true,
+    // fieldset: true, // also legend
+    // figure: true,
+    // iframe: true,
+    // blockquote: true,
+    // nav: true,
+    // meter: true,
+    // progress: true,
+    // address: true,
+    // abbr: true,
+    // mark: true,
+    // code: true, // also pre & samp
+    // kbd: true,
+    // dialog: true,,,,,,,,,,,
+);
+
+$z-index: (
+  // nav,
+    page-footer,
+  page-header,
+  dialog,
+  toast,
+  loading
+);
+
+$color-white: #fff;
+$color-orange: #f39800;
+$color-32: #323233;
+$color-7d: #7d7e80;
+$color-96: #969799;
+$color-c8: #c8c9cc;
+$color-f2: #f2f3f5;
+$color-f7: #f7f8fa;
+$color-333: #333;
+$color-666: #666;
+$color-999: #999;
+$color-green: #1abc9c;
+$color-red: #c6a86f;
+$color-blue: #0085d0;
+$color-icon: #9ea7b4;
+$color-primary: $color-orange;
+$color-secondary: #f20b1b;
+$color-gray: #f1f1f1;
+$color-light-gray: #dfdfdf;
+$color-border-gray: #ebedf0;
+$input-border-color: $color-border-gray;
+$input-placeholder-color: #cccccc;
+$default-hairline-color: $color-border-gray;
+
+// config color for componnet
+$check-color: $color-primary;
+$tab-color: $color-primary;
+
+// margin
+$margin: 8px;
+
+// font
+$font-18: 18px;
+$font-14: 14px;
+$font-12: 12px;
+$font-10: 10px;
+
+@import 'utils/utils';
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin icon-space() {
+  display: inline-block;
+  content: '';
+  background-size: 100%;
+}
+
+$header-size: 44px;
+$nav-size: 50px;
+$dialog-header-size: $header-size;
+$bar-size: 50px;
+$btn-size: 40px;
+$tab-size: $btn-size;
+$avatar-size: 50px;

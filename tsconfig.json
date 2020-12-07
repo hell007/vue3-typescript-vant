@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    //与 path 一同定义模块查找的路径
+    "baseUrl": ".",
+    //允许注解语法
+    "experimentalDecorators": true,
+    //兼容 babel 模块导入的模式（不需要 * as）
+    "esModuleInterop": true,
+    "importHelpers": true,
+    //jsx的编译方式
+    "jsx": "preserve",
+    //指定生成文件的 ECMAScript 版本
+    "target": "esnext",
+    //指定生成哪个模块系统代码
+    "module": "commonjs",
+    //如何处理模块
+    "moduleResolution": "node",
+    // 若有未使用的局部变量则抛错
+    "noUnusedLocals": true,
+    // 若有未使用的参数则抛错
+    "noUnusedParameters": true,
+    // 支持引入 json 模块
+    "resolveJsonModule": true,
+    "rootDir": ".",
+    //严格模式解析
+    "strict": true,
+    //对库定义文件跳过类型检查
+    "skipLibCheck": true,
+    //允许引入没有默认导出的模块
+    //生成对应的 map 文件
+    "sourceMap": false,
+    "types": ["webpack-env"],
+    "locale": "zh-CN",
+    "typeRoots": ["node_modules/@types", "shims-vue.d.ts"],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src", "shims-vue.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

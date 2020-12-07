@@ -1,0 +1,86 @@
+@mixin page-flex() {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-x:hidden;
+
+  &-main {
+    // @include scrollable();
+    flex: 1;
+    position: relative;
+  }
+
+  &-scroller {
+    @include scrollable();
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    scroll-behavior: smooth;
+  }
+
+  &-mask {
+  }
+}
+
+@mixin page-fixed() {
+  &-fix-dummy {
+    position: relative;
+  }
+
+  &-header,
+  &-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+
+  &-header {
+    top: 0;
+  }
+
+  &-footer {
+    bottom: 0;
+  }
+}
+
+
+.page {
+  // @if $debug {
+  //   @include page-fixed();
+  // } @else {
+    @at-root {
+      body {
+        height: 100%;
+      }
+    }
+    @include page-flex();
+  // }
+
+  &-header {
+    position: relative;
+    // box-shadow:
+    //   0 1px 1px 0 rgba(#000, .1),
+    //   0 2px 2px 1px rgba(#000, .05);
+    // z-index: index($z-index, page-header);
+    //box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &-footer {
+    position: relative;
+    box-shadow:
+      0 -1px 1px 0 rgba(#000, .1),
+      // 0 -2px 2px 1px rgba(#000, .05)
+      ;
+    z-index: index($z-index, page-footer);
+  }
+
+  &-flex {
+    @include page-flex();
+  }
+
+  &-fixed {
+    @include page-fixed();
+  }
+}
