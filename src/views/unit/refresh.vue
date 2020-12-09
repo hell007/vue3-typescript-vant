@@ -42,7 +42,7 @@ export default defineComponent({
   components: {},
   setup() {
     const primary = theme.primary;
-    const title = '下拉刷新上拉加载';
+    const title = '下拉刷新';
 
     const stateObj: {
       noData: boolean;

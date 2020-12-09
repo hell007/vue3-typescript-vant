@@ -8,13 +8,18 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/unitList',
-    name: '单元-上拉加载案列',
+    name: '单元-上拉加载',
     component: () => import(/* webpackChunkName: "unit-list" */ '../views/unit/list.vue')
   },
   {
     path: '/unitRefresh',
-    name: '单元-下拉刷新上拉加载',
+    name: '单元-下拉刷新',
     component: () => import(/* webpackChunkName: "unit-refresh" */ '../views/unit/refresh.vue')
+  },
+  {
+    path: '/unitDialog',
+    name: '单元-弹窗使用',
+    component: () => import(/* webpackChunkName: "unit-dialog" */ '../views/unit/modal.vue')
   }
 ];
 

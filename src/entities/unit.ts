@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-member-accessibility */
 import Mock from 'mockjs';
+import { fetchPost } from '@/utils/api';
 
 export interface UnitModel {
   id?: number;
@@ -43,6 +44,18 @@ export class Unit {
       setTimeout(() => {
         resolve(res);
       }, 1000);
+    });
+  };
+
+  getUnit = (q: any) => {
+    return new Promise((resolve, reject) => {
+      fetchPost('/flep/app/api/sys/login', q)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((err) => {
+          reject(err);
+        });
     });
   };
 

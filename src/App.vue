@@ -10,7 +10,7 @@ import { defineComponent, reactive, toRefs } from 'vue';
 export default defineComponent({
   setup() {
     const state = reactive({
-      includeRoutes: ['/about', 'about']
+      includeRoutes: []
     });
     return { ...toRefs(state) };
   }

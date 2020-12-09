@@ -12,7 +12,9 @@ import {
   Form,
   Field,
   ActionSheet,
-  Uploader
+  Uploader,
+  Overlay,
+  Loading
 } from 'vant';
 
 const plugins = [
@@ -28,7 +30,9 @@ const plugins = [
   Form,
   Field,
   ActionSheet,
-  Uploader
+  Uploader,
+  Overlay,
+  Loading
 ];
 
 export const vantPlugins = {

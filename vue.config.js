@@ -1,16 +1,8 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+/* eslint-disable @typescript-eslint/no-require-imports */
 const merge = require("webpack-merge");
-
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const tsImportPluginFactory = require("ts-import-plugin");
-
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const pxtoviewport = require("postcss-px-to-viewport");
-
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const path = require("path");
-
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const autoprefixer = require("autoprefixer");
 
 // 是否为生产环境

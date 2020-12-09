@@ -35,13 +35,13 @@ import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 import { theme } from '@/theme';
 import { fetchPost } from '@/utils/api';
+import { Unit } from '@/entities/unit';
 import * as storage from '@/utils/storage';
-import { Toast } from 'vant';
 
 export default defineComponent({
   name: 'unit-index',
   components: {},
-  setup() {
+  setup(props, ctx) {
     const router = useRouter();
     const store = useStore();
 
@@ -55,15 +55,20 @@ export default defineComponent({
     };
 
     const state = reactive(stateObj);
+    const api = new Unit();
 
     const list = [
       {
-        name: '下拉刷新上拉加载',
+        name: '下拉刷新',
         url: '/unitRefresh'
       },
       {
         name: '上拉加载',
         url: '/unitList'
+      },
+      {
+        name: '弹窗',
+        url: '/unitDialog'
       },
       {
         name: '开发',
@@ -73,7 +78,7 @@ export default defineComponent({
 
     //操作
     const navOption = () => {
-      console.log('app-==', this);
+      console.log('setup里面不能使用this', this);
     };
 
     // 路由跳转
@@ -93,7 +98,6 @@ export default defineComponent({
           storage.set('token', data.token);
         })
         .catch((err) => {
-          Toast({ message: '网络异常', position: 'bottom' });
           console.log(err);
         });
     };
@@ -104,14 +108,36 @@ export default defineComponent({
         loginId: '11187245996',
         verifyCode: '708090'
       };
-      let res = await store.dispatch('unit/login', user);
-      state.user = res.data.body;
-      storage.set('token', res.data.body.token);
+      try {
+        let res = await store.dispatch('unit/login', user);
+        state.user = res.data.body;
+        storage.set('token', res.data.body.token);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    //調用封裝方法
+    const login3 = async () => {
+      const user = {
+        loginId: '11187245996',
+        verifyCode: '708090'
+      };
+      try {
+        let res = (await api.getUnit(user)) as any;
+        let data = res.data.body;
+        console.log('login3==', data);
+      } catch (err) {
+        console.log(err);
+      }
     };
 
     onMounted(() => {
-      //login(); 本地请求
-      //login2(); // vuex
+      //login(); //本地请求
+      //login2(); //vuex
+      //login3(); //实体
+      console.log('props==', props);
+      console.log('ctx==', ctx);
     });
 
     return {
@@ -122,7 +148,8 @@ export default defineComponent({
       navOption,
       goto,
       login,
-      login2
+      login2,
+      login3
     };
   }
 });
