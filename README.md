@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## VUE3 开发知识点
 
 1、什么是Composition API
@@ -740,6 +739,3 @@ module.exports = {
 ## 解决办法
 
 [vue2迁移到vue3](https://www.vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A6%82%E8%A7%88)
-
-[去掉gulp使用babel转义js后添加的use strict](https://www.babeljs.cn/docs/)
->>>>>>> c5f63ffa431653ec66c0bce0d1b24be3f8874bdf
