@@ -37,7 +37,7 @@ export class BmobMessage {
       this.loading = false;
     });
   };
-  findAll() {
+  findAll = () => {
     return new Promise<BmobMessageOption[]>((resolve, reject) => {
       const query = Bmob.Query('message');
       query.limit(this.size);
@@ -54,5 +54,5 @@ export class BmobMessage {
           reject();
         });
     });
-  }
+  };
 }
